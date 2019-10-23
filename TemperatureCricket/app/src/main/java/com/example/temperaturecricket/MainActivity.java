@@ -33,13 +33,21 @@ public class MainActivity extends AppCompatActivity {
 
         formatter = new DecimalFormat("#0.0");
 
+
+
         btnCalculate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
+                final int invalid = Integer.parseInt(etChirps.getText().toString().trim());
+
                 if (etChirps.toString().isEmpty())
                 {
                     Toast.makeText(MainActivity.this, "Please enter all fields!", Toast.LENGTH_SHORT).show();
+                }
+                else if(invalid <= 0 )
+                {
+                    Toast.makeText(MainActivity.this, "Please enter valid input!", Toast.LENGTH_SHORT).show();
                 }
                 else
                 {
